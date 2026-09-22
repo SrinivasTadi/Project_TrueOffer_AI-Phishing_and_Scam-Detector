@@ -1,0 +1,98 @@
+# ==============================================================================
+# Git Ignore Configuration for TrueOffer (Phishing Inspector)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Environment Variables & Sensitive Configuration Files
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+*.local
+local.settings.json
+
+# ------------------------------------------------------------------------------
+# Review Docs & Internal Development Documentation
+# ------------------------------------------------------------------------------
+Review_Docs/
+Review_Docs
+review_docs/
+
+# ------------------------------------------------------------------------------
+# Security Credentials, Private Keys & Certificates
+# ------------------------------------------------------------------------------
+*.pem
+*.key
+*.pkcs12
+*.pfx
+*.p12
+*.crt
+*.cer
+*.der
+secrets.json
+credentials.json
+auth.json
+service_account*.json
+google-credentials*.json
+client_secret*.json
+
+# ------------------------------------------------------------------------------
+# Python Artifacts & Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------------------------
+# Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# Testing & Code Quality Caches
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# ------------------------------------------------------------------------------
+# Operating System & IDE Artifacts
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace

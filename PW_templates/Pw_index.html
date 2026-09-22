@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrueOffer — Fake Offer Letter & Phishing Inspector</title>
+  <meta name="description" content="AI-powered security scanner to detect fake job offers, phishing links, and recruitment scams with explainable threat indexing.">
+  
+  <!-- Google Fonts: Outfit & Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/Pw_static/Pw_css/Pw_style.css">
+</head>
+<body>
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <div class="brand">
+        <div class="brand-shield">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2Z" fill="#092634"/>
+            <path d="M12 4.18L18 6.43V11.09C18 15.01 15.45 18.66 12 19.82C8.55 18.66 6 15.01 6 11.09V6.43L12 4.18Z" fill="#004E72"/>
+            <circle cx="12" cy="12" r="3" fill="#FF6E42"/>
+          </svg>
+        </div>
+        <span class="brand-name">TrueOffer</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">How it Works</a>
+        <a href="#demo-section" class="nav-link">Examples</a>
+        <a href="#awareness" class="nav-link">Awareness</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#scan-card" class="btn-scan-now" id="navScanBtn">Scan Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (SPLIT WORKBENCH) ================= -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      
+      <!-- Left Column: Copy & Value Proposition -->
+      <div class="hero-content">
+        <div class="partner-pill">
+          <span class="dot-live"></span>
+          AI Phishing &amp; Scam Detector
+        </div>
+
+        <h1 class="hero-title">
+          Fake Offers <span class="highlight-orange">End Here.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          AI-powered security scanner to detect fake job offers, phishing links and recruitment scams before you fall victim.
+        </p>
+
+        <div class="feature-pills">
+          <div class="pill-item">
+            <div class="pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="pill-text">
+              <strong>Detect Scams</strong>
+              <small>Identify red flags instantly</small>
+            </div>
+          </div>
+
+          <div class="pill-item">
+            <div class="pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <div class="pill-text">
+              <strong>Stay Safe</strong>
+              <small>AI-powered analysis</small>
+            </div>
+          </div>
+
+          <div class="pill-item">
+            <div class="pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="pill-text">
+              <strong>Safer Together</strong>
+              <small>A more aware community</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive White Input Card -->
+      <div class="hero-workbench" id="scan-card">
+        <div class="workbench-card">
+          
+          <!-- Mode Tabs -->
+          <div class="tab-header" role="tablist">
+            <button class="tab-btn active" id="tabText" role="tab" aria-selected="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Analyze Text
+            </button>
+            <button class="tab-btn" id="tabUrl" role="tab" aria-selected="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+              Analyze URL
+            </button>
+          </div>
+
+          <!-- Input Area -->
+          <div class="input-container">
+            <label for="offerInput" id="inputLabel" class="input-label">Paste job offer / email / message here</label>
+            
+            <textarea 
+              id="offerInput" 
+              class="workbench-textarea" 
+              placeholder="Paste the job offer, email, or message you received..." 
+              rows="6"
+              maxlength="5000"
+            ></textarea>
+
+            <div class="input-footer">
+              <span class="char-count" id="charCount">0/5000 characters</span>
+              <button class="btn-clear" id="clearBtn" title="Clear input" style="display: none;">Clear</button>
+            </div>
+          </div>
+
+          <!-- Loading Progress Stepper (Hidden by default) -->
+          <div class="scan-stepper" id="scanStepper" style="display: none;">
+            <div class="step-indicator" id="step1">
+              <div class="step-spinner"></div>
+              <span>01 Parse Offer</span>
+            </div>
+            <div class="step-arrow">&rarr;</div>
+            <div class="step-indicator" id="step2">
+              <div class="step-dot"></div>
+              <span>02 Inspect Signals</span>
+            </div>
+            <div class="step-arrow">&rarr;</div>
+            <div class="step-indicator" id="step3">
+              <div class="step-dot"></div>
+              <span>03 Threat Index</span>
+            </div>
+          </div>
+
+          <!-- Inline Error Banner -->
+          <div class="alert-banner" id="alertBanner" style="display: none;">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-message" id="alertMessage">Input cannot be empty.</span>
+          </div>
+
+          <!-- Action Button -->
+          <button class="btn-cta-orange" id="analyzeBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span id="btnText">Analyze for Scam</span>
+          </button>
+
+          <!-- Privacy Footnote -->
+          <div class="privacy-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Your data is private and never shared.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 4-PILLAR FEATURE ROW ================= -->
+  <section class="pillars-section" id="features">
+    <div class="container pillars-grid">
+      
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#004E72" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <circle cx="10" cy="14" r="2"></circle>
+            <line x1="14" y1="18" x2="11.5" y2="15.5"></line>
+          </svg>
+        </div>
+        <h3>AI Analysis</h3>
+        <p>Scans for suspicious patterns using advanced AI models.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#004E72" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3>Domain Check</h3>
+        <p>Verifies domain age and website credibility via WHOIS.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#004E72" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <h3>Red Flag Detection</h3>
+        <p>Identifies payment requests, urgent language, and deposit traps.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#004E72" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <h3>Scam Threat Index</h3>
+        <p>Get a transparent, deterministic risk score from 0–100%.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3-COLUMN BENTO DASHBOARD SECTION ================= -->
+  <section class="dashboard-section" id="demo-section">
+    <div class="container dashboard-grid">
+
+      <!-- COLUMN 1: Try a Sample Job Offer (White Card) -->
+      <div class="dash-col col-sample">
+        <div class="sample-card">
+          <div class="card-badge">EXAMPLE</div>
+          <h2 class="card-title">Try a Sample Job Offer</h2>
+
+          <div class="sample-code-box" id="sampleBox">
+            <div class="sample-header">Subject: Congratulations! You're Selected!</div>
+            <div class="sample-body">
+              Hi,<br><br>
+              We are pleased to inform you that you have been selected for a remote position at GlobalTech Solutions. To confirm your position, please pay a refundable security deposit of ₹4,999 for your laptop and training kit. This must be completed within 24 hours.<br><br>
+              Join our team and start your career!<br><br>
+              Best regards,<br>
+              HR Team<br>
+              GlobalTech Solutions
+            </div>
+          </div>
+
+          <div class="sample-actions">
+            <button class="btn-use-example" id="useSampleBtn">
+              Use This Example &rarr;
+            </button>
+            <button class="btn-use-url-example" id="useUrlSampleBtn" title="Try a suspicious URL example">
+              Try Phishing URL &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Analysis Result (Dark Navy Bento Card) -->
+      <div class="dash-col col-result" id="resultsCol">
+        <div class="result-card" id="resultCard">
+          <div class="result-header">
+            <span class="sample-result-tag" id="resultTag">SAMPLE RESULT</span>
+            <button class="btn-report-link" id="reportLinkBtn">
+              View Full Report
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+
+          <h2 class="result-title">Analysis Result</h2>
+
+          <!-- Donut Score Widget -->
+          <div class="score-widget">
+            <div class="donut-wrapper">
+              <svg class="donut-svg" viewBox="0 0 100 100">
+                <circle class="donut-bg" cx="50" cy="50" r="40" />
+                <circle class="donut-meter" id="donutMeter" cx="50" cy="50" r="40" />
+              </svg>
+              <div class="donut-text">
+                <span class="donut-score" id="scoreNum">87%</span>
+                <span class="donut-label">Scam Threat Index</span>
+              </div>
+            </div>
+
+            <div class="risk-info">
+              <div class="risk-pill risk-high" id="riskBadge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span id="riskLabel">High Risk</span>
+              </div>
+              <p class="risk-desc" id="riskSummary">
+                This appears to be a fraudulent job offer with multiple red flags. We strongly recommend you do not proceed.
+              </p>
+
+              <!-- Threat Indicator Color Bar -->
+              <div class="threat-meter-bar-container">
+                <div class="threat-bar-track">
+                  <div class="threat-bar-fill" id="threatBarFill" style="width: 87%;"></div>
+                </div>
+                <div class="threat-bar-labels">
+                  <span>Safe</span>
+                  <span>Medium</span>
+                  <span>High</span>
+                  <span>Critical</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Domain Intelligence Card (Revealed when URL scan performed) -->
+          <div class="domain-intel-box" id="domainIntelBox" style="display: none;">
+            <div class="intel-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+              </svg>
+              <span>Domain Intelligence</span>
+            </div>
+            <div class="intel-grid">
+              <div class="intel-item">
+                <span class="intel-label">Target Domain</span>
+                <strong id="intelDomain">-</strong>
+              </div>
+              <div class="intel-item">
+                <span class="intel-label">Domain Age</span>
+                <strong id="intelAge" class="highlight-warn">-</strong>
+              </div>
+              <div class="intel-item">
+                <span class="intel-label">Registrar</span>
+                <span id="intelRegistrar">-</span>
+              </div>
+              <div class="intel-item">
+                <span class="intel-label">Status</span>
+                <span id="intelStatus" class="status-chip">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detected Red Flags List -->
+          <div class="red-flags-section">
+            <h4 class="section-label">Detected Red Flags</h4>
+            <div class="flags-list" id="flagsContainer">
+              
+              <!-- Flag Item 1 -->
+              <div class="flag-item">
+                <div class="flag-bullet bullet-red"></div>
+                <div class="flag-body">
+                  <div class="flag-title">Payment Requested</div>
+                  <div class="flag-quote">"Pay a refundable security deposit of ₹4,999"</div>
+                </div>
+                <div class="flag-badge badge-high">High</div>
+              </div>
+
+              <!-- Flag Item 2 -->
+              <div class="flag-item">
+                <div class="flag-bullet bullet-red"></div>
+                <div class="flag-body">
+                  <div class="flag-title">Urgency Language</div>
+                  <div class="flag-quote">"Must be completed within 24 hours"</div>
+                </div>
+                <div class="flag-badge badge-high">High</div>
+              </div>
+
+              <!-- Flag Item 3 -->
+              <div class="flag-item">
+                <div class="flag-bullet bullet-orange"></div>
+                <div class="flag-body">
+                  <div class="flag-title">Suspicious Domain</div>
+                  <div class="flag-quote">Domain is only 12 days old</div>
+                </div>
+                <div class="flag-badge badge-medium">Medium</div>
+              </div>
+
+              <!-- Flag Item 4 -->
+              <div class="flag-item">
+                <div class="flag-bullet bullet-orange"></div>
+                <div class="flag-body">
+                  <div class="flag-title">Generic Content</div>
+                  <div class="flag-quote">No specific company details or role information</div>
+                </div>
+                <div class="flag-badge badge-medium">Medium</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Recommended Action Banner -->
+          <div class="action-advisory" id="actionAdvisory">
+            <strong>Recommended Action:</strong>
+            <p id="actionText">Do not transfer any funds or share banking details. Legitimate employers never ask candidates to pay for onboarding equipment.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COLUMN 3: Recent Scans & Community (White Cards) -->
+      <div class="dash-col col-sidebar">
+        
+        <!-- Recent Scans Card -->
+        <div class="sidebar-card recent-scans-card">
+          <div class="scans-header">
+            <h3 class="sidebar-title">Recent Scans</h3>
+            <a href="#hero" class="view-all-link">View All</a>
+          </div>
+
+          <div class="scans-list" id="scansFeed">
+            <div class="scans-empty" id="scansEmpty">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8CAAB9" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>No recent scans yet.<br><small>Your analyzed offers and URLs will appear here.</small></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Awareness Card -->
+        <div class="sidebar-card community-card" id="awareness">
+          <div class="community-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004E72" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h4>Together for a Safer Internet</h4>
+          <p>Every scan helps build a safer community. Stay alert. Share awareness.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BOTTOM CTA BANNER ================= -->
+  <section class="bottom-cta-section">
+    <div class="container cta-banner">
+      <div class="cta-copy">
+        <span class="cta-eyebrow">DON'T JUST APPLY. VERIFY.</span>
+        <h2 class="cta-headline">Be Smarter. Be Safer. <span class="highlight-orange">Stop Scams.</span></h2>
+      </div>
+      <a href="#scan-card" class="btn-cta-orange-lg">
+        Start Scanning Now &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2Z" fill="#092634"/>
+            <circle cx="12" cy="12" r="3" fill="#FF6E42"/>
+          </svg>
+          <strong>TrueOffer</strong>
+        </div>
+        <p class="footer-tagline">Built with AI for a safer tomorrow.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-credits">
+        <span>TrueOffer Security &bull; Phishing Inspector</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript App Logic -->
+  <script src="/Pw_static/Pw_js/Pw_app.js"></script>
+</body>
+</html>
