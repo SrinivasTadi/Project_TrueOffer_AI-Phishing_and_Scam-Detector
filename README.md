@@ -11,10 +11,13 @@ Job seekers frequently fall victim to recruitment scams involving fake job offer
 
 Key Features
 ---
--Text & URL Scanning: Analyzes pasted offer letter text, email messages, or suspicious job portal links.
--AI Fraud Detection: Uses Google Gemini AI and pattern matching to detect red flags like upfront fees, deposits, and pressure tactics.
--Domain Age Check: Checks domain registration age to catch newly created phishing and impersonation websites.
--Threat Score & Recommendations: Delivers an instant 0–100% risk score with highlighted evidence and safety advice.
+* **ext & URL Scanning: Analyzes pasted offer letter text, email messages, or suspicious job portal links.
+
+* ** AI Fraud Detection: Uses Google Gemini AI and pattern matching to detect red flags like upfront fees, deposits, and pressure tactics.
+
+* ** Domain Age Check: Checks domain registration age to catch newly created phishing and impersonation websites.
+
+* ** Threat Score & Recommendations: Delivers an instant 0–100% risk score with highlighted evidence and safety advice.
 
 
 <img width="1600" height="915" alt="Pw_pic_one 1" src="https://github.com/user-attachments/assets/49c9c00b-b7c6-4f14-b749-685ef6751cbe" />
