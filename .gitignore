@@ -18,6 +18,10 @@ local.settings.json
 Review_Docs/
 Review_Docs
 review_docs/
+project_docs/
+project_docs
+Project_Docs/
+docs/
 
 # ------------------------------------------------------------------------------
 # Security Credentials, Private Keys & Certificates
